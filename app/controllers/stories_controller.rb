@@ -11,6 +11,7 @@ class StoriesController < ApplicationController
     ap params
     Story.create(name: "PULL REQUEST FEITO!")
     #COMMENT
+    head :ok
   end
 
   # GET /stories/1
