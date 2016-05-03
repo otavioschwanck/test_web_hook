@@ -1,5 +1,6 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /stories
   # GET /stories.json
@@ -8,7 +9,14 @@ class StoriesController < ApplicationController
   end
 
   def update_pull_request
-    ap params
+    ap "ESTOU AQUI. PULL REQUEST:"
+    ap params[:pull_request]
+    ap "BRANCH:"
+    id = params[:pull_request]['ref']
+    ap "NUMERO: #{id}"
+    ap params[:pull_request]['number']
+
+    respond_with Story.last, location: stories_path
   end
 
   # GET /stories/1
