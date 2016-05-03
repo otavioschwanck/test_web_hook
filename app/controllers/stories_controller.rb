@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :verify_authenticity_token
+  
   # GET /stories
   # GET /stories.json
   def index
@@ -9,6 +10,9 @@ class StoriesController < ApplicationController
 
   def update_pull_request
     ap params
+    Story.create(name: "PULL REQUEST FEITO!")
+
+    respond_with Story.last, location: stories_path
   end
 
   # GET /stories/1
