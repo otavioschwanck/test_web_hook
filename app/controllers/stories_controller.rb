@@ -9,11 +9,11 @@ class StoriesController < ApplicationController
   end
 
   def update_pull_request
-    ap "ESTOU AQUI. NUMERO:"
-    ap params[:pull_request][:number]
-    ap "BRANCH REAL:"
-    id = params[:pull_request][:user][:ref]
-    ap "Oi"
+    ap "ESTOU AQUI. NUMERO...:"
+    ap params[:pull_request]['number']
+    # ap "BRANCH REAL:"
+    # id = params[:pull_request][:user][:ref]
+    # ap "Oi"
 
     respond_with Story.last, location: stories_path
   end
