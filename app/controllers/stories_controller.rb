@@ -10,7 +10,6 @@ class StoriesController < ApplicationController
 
   def update_pull_request
     ap "ESTOU AQUI. PULL REQUEST:"
-    ap params[:pull_request]
     ap "BRANCH REAL:"
     id = params[:pull_request].user.ref
     ap "NUMERO REAL !!!!!!: #{id}"
