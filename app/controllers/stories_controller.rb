@@ -14,7 +14,7 @@ class StoriesController < ApplicationController
     ap params[:pull_request][:number]
     ap "BRANCH REAL:"
     id = params[:pull_request][:user][:ref]
-
+    ap "Oi"
 
     respond_with Story.last, location: stories_path
   end
