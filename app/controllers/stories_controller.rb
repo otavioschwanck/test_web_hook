@@ -9,6 +9,9 @@ class StoriesController < ApplicationController
 
   def update_pull_request
     ap params
+    Story.create(name: "PULL REQUEST FEITO!")
+    #COMMENT
+    head :ok
   end
 
   # GET /stories/1
