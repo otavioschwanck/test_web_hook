@@ -10,10 +10,8 @@ class StoriesController < ApplicationController
   def update_pull_request
     ap params
     Story.create(name: "PULL REQUEST FEITO!")
-    #COMMENT
-    head :ok
-    # TRY HARD
-    # AGORA VAI
+
+    respond_with Story.last, location: stories_path
   end
 
   # GET /stories/1
