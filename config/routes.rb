@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :stories do
-    post 'update_pull_request' => 'stories#update_pull_request'
-  end
+  post 'update_pull_request' => 'stories#update_pull_request'
+  resources :stories
+  # well done
+  # WELL DOE
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
